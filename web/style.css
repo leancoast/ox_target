@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --color-default: #ffffff;
+  --color-hover: #d400ff;
+  --color-background: rgba(255, 0, 242, 0.5);
+  --color-background-hover: rgba(225, 0, 255, 0.6);
+  --color-box-shadow: #c31ac9;
+}
+
+body {
+  visibility: hidden;
+  user-select: none;
+  white-space: nowrap;
+  margin: 0;
+  overflow: hidden;
+}
+
+p {
+  margin: 0;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 40;
+}
+
+#eye {
+  position: absolute;
+  font-size: 5;
+  top: 50.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: var(--color-background);
+  transition: fill 1s ease;
+}
+
+.eye-hover {
+  fill: #cc00d3;
+  animation: eye-pulse 0.5s ease infinite;
+}
+
+@keyframes eye-pulse {
+  0% {
+    fill: var(--color-hover);
+  }
+  50% {
+    fill: var(--color-background);
+  }
+  100% {
+    fill: var(--color-hover);
+  }
+}
+
+
+#hex::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  content: "\2B22";
+  color: #91009e8f;
+  font-size: 5.07vh;
+  text-shadow: #ffffff00 1px 0 10px;
+  -webkit-text-stroke: 1px var(--color-hover); 
+  transition: color 1s ease; 
+}
+
+#hex.hex-hover::before {
+  color: #cc00d3;
+  opacity: 0.6;
+}
+
+
+#options-wrapper {
+  position: absolute;
+  top: calc(48.4%);
+  left: calc(50% + 20pt);
+}
+
+.option-container {
+  color: var(--color-default);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background: var(--color-background);
+  border-radius: 2px;
+  font-size: 15pt;
+  line-height: 15pt;
+  font-family: 'Nunito';
+  vertical-align: middle;
+  transition: opacity 1s ease, background 0.5s ease, box-shadow 0.5s ease, color 0.5s ease;
+  opacity: 0;
+}
+
+.option-container.show {
+  opacity: 1;
+}
+
+.option-container:hover {
+  background: var(--color-background-hover);
+  border-radius: 2px;
+  box-shadow: 0px 0px 15px 3px var(--color-box-shadow);
+  color: var(--color-default);
+  margin-left: 4pt;
+  animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-3px); }
+  100% { transform: translateX(3px); }
+}
+
+
+.option-icon {
+  font-size: 15pt;
+  line-height: 22pt;
+  width: 14pt;
+  margin: 7pt;
+  padding-left: 3px;
+  padding-right: 3.5px;
+  color: var(--color-hover);
+}
+
+.option-label {
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.option-label {
+  font-weight: 500;
+  margin-right: 10px;
+}
+
